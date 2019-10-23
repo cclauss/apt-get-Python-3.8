@@ -1,12 +1,21 @@
 language: python
-env:
-  - PACKAGE=python3.8-minimal
-  - PACKAGE=libpython3.8-minimal
-  - PACKAGE=libpython3.8-stdlib
-  - PACKAGE=python3-lib2to3
-addons:
-  apt:
-    upgrade: true
-    packages: $PACKAGE
+matrix:
+  include:
+    - addons:
+        apt:
+          upgrade: true
+          packages: python3.8-minimal
+    - addons:
+        apt:
+          upgrade: true
+          packages: libpython3.8-minimal
+    - addons:
+        apt:
+          upgrade: true
+          packages: libpython3.8-stdlib
+    - addons:
+        apt:
+          upgrade: true
+          packages: python3-lib2to3
 install: true
 script: true
