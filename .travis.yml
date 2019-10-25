@@ -4,6 +4,10 @@ matrix:
     - addons:
         apt:
           upgrade: true
+          packages: python3.8
+    - addons:
+        apt:
+          upgrade: true
           packages: python3.8-minimal
     - addons:
         apt:
@@ -20,9 +24,6 @@ matrix:
     - language: generic
       before_install:
         - wget -qO- https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz | tar -zxv
-        - cd Python-3.8.0
-        - ./configure
-        - sudo make
-        - sudo make install
+        - cd Python-3.8.0 ; ./configure ; sudo make ; sudo make install
 install: true
-script: python --version ; python3 -m pip --version ||true
+script: python3 --version ; python3 -m pip --version ||true
