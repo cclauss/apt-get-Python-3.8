@@ -17,5 +17,12 @@ matrix:
         apt:
           upgrade: true
           packages: python3-lib2to3
+    - language: generic
+      before_install:
+        - wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz | tar -xv
+        - cd Python-3.8.0
+        - ./configure
+        - sudo make
+        - sudo make install
 install: true
-script: true
+script: python --version ; python3 -m pip --version ||true
