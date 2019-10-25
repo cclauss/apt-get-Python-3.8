@@ -19,7 +19,8 @@ matrix:
           packages: python3-lib2to3
     - language: generic
       before_install:
-        - wget - https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz | tar -zxv
+        - wget - https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz
+        - tar -zxvf Python-3.8.0.tgz
         - cd Python-3.8.0
         - ./configure
         - sudo make
