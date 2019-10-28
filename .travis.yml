@@ -1,5 +1,5 @@
 dist: bionic
-language: python
+language: generic
 matrix:
   include:
     - addons:
