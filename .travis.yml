@@ -22,6 +22,18 @@ matrix:
         apt:
           upgrade: true
           packages: python3-lib2to3
+    - addons:
+        apt:
+          upgrade: true
+          packages: python3.8-dev
+    - addons:
+        apt:
+          upgrade: true
+          packages: python3.8-venv
+    - addons:
+        apt:
+          update: true
+          packages: python3.8-dev
     - language: generic
       before_install:
         - wget -qO- https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz | tar -zxv
