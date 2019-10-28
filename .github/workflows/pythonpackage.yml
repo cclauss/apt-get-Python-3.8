@@ -13,10 +13,12 @@ jobs:
       run: |
         wget -qO- https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz | tar -zxv
         cd Python-3.8.0 ; ./configure ; sudo make ; sudo make install
+        chmod +w /usr/local/lib/python3.8/site-packages || true
+        sudo chmod +w /usr/local/lib/python3.8/site-packages
         python3 --version ; python3 -m pip --version
     - name: Install dependencies
       run: |
-        sudo -H python3 -m pip install --upgrade pip
+        python3 -m pip install --upgrade pip
         # python3 -m pip install -r requirements.txt
     - name: Lint with flake8
       run: |
